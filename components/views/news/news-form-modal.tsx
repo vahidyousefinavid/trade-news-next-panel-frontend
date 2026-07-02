@@ -194,7 +194,7 @@ export function NewsFormModal({ news, categories, apiUrl, onSaved, onClose }: Pr
             <div className="border-t border-gray-100" />
 
             {/* Image + Category */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">
                   <span className="flex items-center gap-1.5"><ImageIcon className="w-3 h-3" /> تصویر</span>
@@ -243,7 +243,7 @@ export function NewsFormModal({ news, categories, apiUrl, onSaved, onClose }: Pr
             </div>
 
             {/* Source + Tags */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">
                   <span className="flex items-center gap-1.5"><Globe className="w-3 h-3" /> منبع</span>
