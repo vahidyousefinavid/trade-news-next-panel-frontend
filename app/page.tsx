@@ -152,7 +152,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Stat cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 mb-8">
         {STAT_CARDS.map(({ key, title, icon: Icon, href, gradient, light, text, border }) => (
           <div
             key={key}
@@ -182,10 +182,10 @@ export default function DashboardPage() {
       </div>
 
       {/* Content grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
 
         {/* Recent news */}
-        <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <div className="md:col-span-1 lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
             <div className="flex items-center gap-2.5">
               <Clock className="w-4 h-4 text-gray-400" />

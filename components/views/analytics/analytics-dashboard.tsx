@@ -84,7 +84,7 @@ export function AnalyticsDashboard() {
         </button>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4">
         {statCards.map(({ label, value, icon: Icon, color, bg }) => (
           <div key={label} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
             <div className={`w-9 h-9 ${bg} rounded-xl flex items-center justify-center mb-3`}>
@@ -96,7 +96,7 @@ export function AnalyticsDashboard() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm">
           <div className="flex items-center gap-2 p-5 border-b border-gray-100">
             <BarChart2 className="w-4 h-4 text-amber-500" />
@@ -211,10 +211,10 @@ export function AnalyticsDashboard() {
               <tr className="bg-gray-50 border-b border-gray-100 text-gray-500 text-right">
                 <th className="px-4 py-3 font-medium">#</th>
                 <th className="px-4 py-3 font-medium">عنوان</th>
-                <th className="px-4 py-3 font-medium">دسته‌بندی</th>
+                <th className="px-4 py-3 font-medium hidden sm:table-cell">دسته‌بندی</th>
                 <th className="px-4 py-3 font-medium">وضعیت</th>
                 <th className="px-4 py-3 font-medium">بازدید</th>
-                <th className="px-4 py-3 font-medium">تاریخ ثبت</th>
+                <th className="px-4 py-3 font-medium hidden md:table-cell">تاریخ ثبت</th>
               </tr>
             </thead>
             <tbody>
@@ -226,9 +226,9 @@ export function AnalyticsDashboard() {
                 <tr key={n.id} className="border-b border-gray-50 last:border-0 hover:bg-gray-50/50 transition-colors">
                   <td className="px-4 py-3 text-gray-400 text-xs">{i + 1}</td>
                   <td className="px-4 py-3">
-                    <p className="font-medium text-gray-800 truncate max-w-[250px]">{n.title}</p>
+                    <p className="font-medium text-gray-800 truncate max-w-[200px] sm:max-w-[250px]">{n.title}</p>
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="px-4 py-3 hidden sm:table-cell">
                     {n.category ? (
                       <span className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-600">{n.category.name}</span>
                     ) : <span className="text-gray-300 text-xs">—</span>}
@@ -246,7 +246,7 @@ export function AnalyticsDashboard() {
                       <span>{(n.views || 0).toLocaleString('fa-IR')}</span>
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-gray-400 text-xs">
+                  <td className="px-4 py-3 text-gray-400 text-xs hidden md:table-cell">
                     {n.createdAt ? new Date(n.createdAt).toLocaleDateString('fa-IR') : '—'}
                   </td>
                 </tr>
