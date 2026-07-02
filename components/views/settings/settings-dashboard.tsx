@@ -98,29 +98,29 @@ export function SettingsDashboard() {
         </button>
       </div>
 
-      <div className="flex gap-5">
-        <div className="w-52 flex-shrink-0">
-          <nav className="bg-white rounded-2xl border border-gray-100 shadow-sm p-2 space-y-0.5">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
+        <div className="sm:w-52 flex-shrink-0">
+          <nav className="bg-white rounded-2xl border border-gray-100 shadow-sm p-2 flex flex-row sm:flex-col gap-0.5 overflow-x-auto sm:overflow-visible scrollbar-none">
             {TABS.map(({ id, label, icon: Icon }) => (
               <button key={id} onClick={() => setActiveTab(id)}
-                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${
+                className={`flex-shrink-0 sm:w-full flex items-center gap-2 sm:gap-3 px-3 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all whitespace-nowrap ${
                   activeTab === id
                     ? 'bg-blue-50 text-blue-700 font-medium'
                     : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'
                 }`}>
-                <Icon className="w-4 h-4 flex-shrink-0" />
+                <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                 {label}
               </button>
             ))}
           </nav>
         </div>
 
-        <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <div className="flex-1 min-w-0 bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-6">
 
           {activeTab === 'site' && (
             <div className="space-y-5">
               <h2 className="text-base font-semibold text-gray-800 pb-3 border-b border-gray-100">اطلاعات سایت</h2>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className={labelCls}>نام سایت</label>
                   <input type="text" value={settings.siteName} onChange={e => set('siteName', e.target.value)} placeholder="اخبار تجارت" className={inputCls} />
@@ -192,7 +192,7 @@ export function SettingsDashboard() {
           {activeTab === 'display' && (
             <div className="space-y-5">
               <h2 className="text-base font-semibold text-gray-800 pb-3 border-b border-gray-100">تنظیمات نمایش</h2>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className={labelCls}>تعداد اخبار در هر صفحه</label>
                   <select value={settings.newsPerPage} onChange={e => set('newsPerPage', +e.target.value)} className={inputCls}>
